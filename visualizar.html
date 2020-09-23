@@ -1,0 +1,296 @@
+
+<!doctype html>
+<html lang="PT">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>RECOPA</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/album.css" rel="stylesheet">
+    <link href="css/fa/css/all.css" rel="stylesheet">
+
+    <!--custom styles-->
+    <style>
+      .progress a{
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="collapse bg-success" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">Sobre</h4>
+              <p class="text-white">Aqui serão incluidos os documentos selecionados</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+                <a href="login.html"><h4 class="text-white">SAIR</h4></a>
+                <ul class="list-unstyled">
+                  <li><a href="#" class="text-white">Twitter</a></li>
+                  <li><a href="#" class="text-white">Facebook</a></li>
+                  <li><a href="#" class="text-white">Email</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-success box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            <strong>Visualização</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            
+          </button>
+          <span class="navbar-toggler fas fa-2x fa-user-circle" style="margin-left: -75%;"></span>
+            
+        </div>
+       
+      </div>
+    </header>
+    
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <!-- <h1 class="jumbotron-heading">Album example</h1>
+          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+          <p>
+            <a href="#" class="btn btn-primary my-2">Main call to action</a>
+            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+          </p> -->
+          
+          <div class="col-md-7 offset-md-2 mt-5 pt-3">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="" aria-label="Recipient's username">
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-camera"></i></span>
+                <span class="input-group-text"><i class="fa fa-search"></i></span>
+              </div>
+              </div>
+          <!-- <form class="form-inline">
+            <div class="input-group">
+              
+              <input type="text" class="form-control" placeholder="x" aria-label="Usuário" aria-describedby="basic-addon1">
+              <div class="input-group-prepend">
+                <button type="submit">&#128269</button>
+                
+              </div>
+            </div>
+          </form> -->
+        </div>
+        
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Individual
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Lote
+          </label>
+        </div>
+        <br>
+        <br>
+        <!--BARRA DE PROGRESSO-->
+        <div class="progress" style="height: 30px;">
+          <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><a href="transmissao.html">TRANSMISSÃO</a></div>
+          <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="50" aria-valuemin="25" aria-valuemax="100"><a href="visualizar.html">VISUALIZAR</a></div>
+          <div class="progress-bar bg-dark" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="50" aria-valuemax="100"><a href="correcao.html">CORREÇÃO</a></div>
+          <div class="progress-bar bg-dark" role="progressbar" style="width: 25%" aria-valuenow="100" aria-valuemin="75" aria-valuemax="100"><a href="envio.html">ENVIO</a></div>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <!--<div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>-->
+                    <!--<small class="text-muted">9 mins</small>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <!--<div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>-->
+                    <!--<small class="text-muted">9 mins</small>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <!--<div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>-->
+                    <!--<small class="text-muted">9 mins</small>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <!--<div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>-->
+                    <!--<small class="text-muted">9 mins</small>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <!--<div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>-->
+                    <!--<small class="text-muted">9 mins</small>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <!--<div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>-->
+                    <!--<small class="text-muted">9 mins</small>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    
+
+    <footer class="text-muted">
+      <!-- <div class="container">
+        <p class="float-right">
+          <a href="#">Voltar ao Topo</a>
+        </p>
+        <p>Fábrica RECOPA - Cesar School Recife</p>
+        
+      </div> -->
+      <div class="container py-5" style="text-align: center;">
+        <a href="https://datasus.saude.gov.br/"><img src="img/LOGO DATASUS.png" style="width: 15%;"></a>
+        <img src="img/recopa horizontal.png" style="width: 15%; margin-left: 100px;">
+        <a href="https://www.cesar.school/"><img src="img/logo_cesar_school.png" style="width: 15%; margin-left: 100px;"></a>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
