@@ -1,31 +1,33 @@
-
-<!doctype html>
 <html lang="PT">
-  <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+<title>RECOPA</title>
 
-    <title>RECOPA</title>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
+<link rel="stylesheet" href="bootstrap.fd.css">
+<script src="bootstrap.fd.js"></script>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<!-- Bootstrap core CSS -->
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
 
     <!-- Custom styles for this template -->
-    <link href="css/album.css" rel="stylesheet">
-    <link href="css/fa/css/all.css" rel="stylesheet">
-    <link href="css/x.css" rel="stykesheet">
-    
+<link href="css/album.css" rel="stylesheet">
+<link href="css/fa/css/all.css" rel="stylesheet">
+<link href="css/x.css" rel="stykesheet">
 
     <!--custom styles-->
-    <style>
+    <!-- <style>
       
       .barra{
         margin: 300px auto;
@@ -78,13 +80,53 @@
         width: 105px;
         
       }
-    </style>
-  </head>
+    </style> -->
 
-  <body>
 
-    <header>
-      <div class="collapse bg-success" id="navbarHeader">
+</head>
+<body>
+<header>
+	<!-- NOVA NABVBAR-->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-success">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+
+      
+      <strong>Transmissão</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+      aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+      <ul class="navbar-nav mr-auto" style="font-size: 18px;">
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="visualizar.html">Continuar <span class="sr-only">(current)</span></a>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li> -->
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-7" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Dropdown </a>
+          <div class="dropdown-menu dropdown-pink" aria-labelledby="navbarDropdownMenuLink-7">
+            <a class="dropdown-item" href="#">SAIR</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li> -->
+       
+      </ul>
+      <a class="nav-link" href="visualizar.html" style="font-size: 18px; color: white;">Continuar</a>
+      
+ 
+    </div>
+  </div>
+</nav>
+	<!--FIM DA NOVA NAVBAR-->
+      <!-- <div class="collapse bg-success" id="navbarHeader">
         <div class="container">
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
@@ -103,109 +145,43 @@
         </div>
       </div>
       <div class="navbar navbar-dark bg-success box-shadow">
-        <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
+        <div class="container d-flex flex-row">
+          <a href="#" class="navbar-brand align-items-center">
             <img src="img/a_verde.png" style="width: 35px; padding-right: 4%;">
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg> -->
+            
             <strong>Transmissão</strong>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
             
           </button>
-          <span class="navbar-toggler fas fa-2x fa-user-circle" style="margin-left: -75%;"></span>
+          <span class="navbar-toggler fas fa-2x fa-user-circle"></span>
             
         </div>
        
-      </div>
-    </header>
-    
-    <main role="main">
+      </div> -->
+	</header>
+	
+	<!-- FIM DA HEADER-->
 
-      <section class="text-center">
-        <div class="container">
-          <!-- <h1 class="jumbotron-heading">Album example</h1>
-          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-          <p>
-            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-          </p> -->
-          
-          <div class="col-md-7 offset-md-2 mt-5 pt-3">
-            <div class=" input-group mb-3">
-              <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" style="max-width: 40%; margin-left: 30%;">
-              <div class="input-group-append">
-                <span class="input-group-text"><i class="fas fa-camera"></i></span>
-                <span class="input-group-text"><i class="fa fa-search"></i></span>
-              </div>
-          </div>
-          <!-- <form class="form-inline">
-            <div class="input-group">
-              
-              <input type="text" class="form-control" placeholder="x" aria-label="Usuário" aria-describedby="basic-addon1">
-              <div class="input-group-prepend">
-                <button type="submit">&#128269</button>
-                
-              </div>
-            </div>
-          </form> -->
-        </div>
-        
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">
-            Individual
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">
-            Lote
-          </label>
-        </div>
-        
+<main role="main">
 
-        
-        <!--BARRA DE PROGRESSO-->
+<section class="bg-light">
+  <!-- <div class="container"> -->
+	
 
-      
-      </div>
-      <div class="barra">
-        <ul>
-          <li>
-            <img src="img/a_azul.png"><br>
-            <i class="fas fa-sync-alt"></i>
-            <p>Transmissão</p>
-          </li>
-          <li>
-            <img src="img/b.png"><br>
-            <i class="fas fa-sync-alt"></i>
-            <p>Visualizar</p>
-          </li>
-          <li>
-           <img src="img/c.png"><br>
-           <i class="fas fa-sync-alt"></i>
-           <p>Correção</p>
-          </li>
-          <li>
-            <img src="img/d.png"><br>
-            <i class="fas fa-sync-alt"></i>
-            <p>Envio</p>
-          </li>
-
-        </ul>
-        
-     </div><!-- FIM DA BARRA DE PROGRESSO -->
-     
-
-        
-        
-      
-      
-      </section>
-      
-    <div id="remove"> 
-      <div class="album py-5 bg-light" style="margin-top: -300px; text-align: center;">
+	<form id="form" onsubmit="return submitForm();">
+			  
+	  		<div class="text-center">
+			<button type="button" onclick="selectFiles();" style="font-size: 30px;">Selecionar Arquivos</button>
+			</div>
+			<br>
+			
+			<div class="d-flex flex-row bd-highlight mb-3">	
+			<div class="container"><div id="selected-images"></div></div></div>
+			
+      <div id="remove"> 
+      <div class="album py-5 bg-light" style="text-align: center;">
         <div class="container">
 
           <div class="row">
@@ -335,14 +311,44 @@
 
           </div>
         </div>
-        <a href="visualizar.html"><button type="button" class="btn btn-success">Continuar</button></a>
+        <!-- <a href="visualizar.html"><button type="button" class="btn btn-success">Continuar</button></a> -->
       </div>
     </div>
-    </main>
+  <!-- FIM DAS FOTOS EM CAPA-->
 
+      <br>
+      <div class="text-center">
+      <input type="submit" value="ENVIAR DADOS" style="font-size:30px; text-align: center;">
+      </div>
+    </form>
     
+    
+  <!-- </div> fotos sem capa-->
+  
+</section>
+<section>
 
-    <footer class=" footer text-muted">
+</section>
+
+  
+
+
+  <!-- <div class="form-check form-check-inline">
+	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+	<label class="form-check-label" for="defaultCheck1">
+	  Individual
+	</label>
+  </div>
+  <div class="form-check form-check-inline">
+	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+	<label class="form-check-label" for="defaultCheck1">
+	  Lote
+	</label>
+  </div> -->
+	<!--FIM SECTION MAIN-->
+
+
+<footer class="text-muted">
       <!-- <div class="container">
         <p class="float-right">
           <a href="#">Voltar ao Topo</a>
@@ -355,13 +361,63 @@
         <a href="https://sites.google.com/cesar.school/recopa/home"><img src="img/recopa horizontal2.png" style="width: 15%; margin-left: 100px;"></a>
         <a href="https://www.cesar.school/"><img src="img/logo_cesar_school.png" style="width: 15%; margin-left: 100px;"></a>
       </div>
-    </footer>
+</footer>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
-</html>
+
+<script>
+	var selectedImages = [];
+
+	function selectFiles() {
+    //var myobj = document.getElementById("remove");
+     //myobj.remove();
+    var x = document.getElementById("remove");
+    if (x.style.display === "none") {
+    x.style.display = "block";
+    } else {
+    x.style.display = "none";
+    }
+
+
+		$.FileDialog({
+			"accept": "image/*"
+		}).on("files.bs.filedialog", function (event) {
+			var html = "";
+			for (var a = 0; a < event.files.length; a++) {
+				selectedImages.push(event.files[a]);
+				//html += "<div class='card' style='width: 18rem;' >";
+				
+				html += "<img src='" + event.files[a].content + "' style='width: 200px; margin: 10px;'>";
+				//html += "</div>"
+			}
+			document.getElementById("selected-images").innerHTML = html;
+		});
+	}
+
+	function submitForm() {
+		var form = document.getElementById("form");
+		var formData = new FormData(form);
+
+		for (var a = 0; a < selectedImages.length; a++) {
+			formData.append("images[]", selectedImages[a]);
+		}
+
+		var ajax = new XMLHttpRequest();
+		ajax.open("POST", "Http.php", true);
+		ajax.send(formData);
+
+		ajax.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				console.log(this.responseText);
+			}
+		};
+
+		return false;
+  }
+  //função excluir div
+  //function selectFiles() {
+  
+  //}
+  //fim da função
+
+</script>
+</body>
