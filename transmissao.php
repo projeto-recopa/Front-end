@@ -27,18 +27,18 @@
 <link href="css/x.css" rel="stykesheet">
 
     <!--custom styles-->
-    <!-- <style>
+    <style>
       
       .barra{
-        margin: 300px auto;
+        margin: 100px auto;
       }
       .barra img{
         width: 40px;
-        margin-bottom: 20px;
+        margin-bottom: 17px;
       }
       .barra ul{
         text-align: center;
-        margin-top: -200px;
+        
       }
       .barra ul li{
         display: inline-block;
@@ -52,7 +52,7 @@
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        padding: 6px; 
+        padding: 9px; 
       }
       ul li .fas::after{
         content: '';
@@ -80,7 +80,7 @@
         width: 105px;
         
       }
-    </style> -->
+    </style>
 
 
 </head>
@@ -166,11 +166,42 @@
 
 <main role="main">
 
+<!-- Barra de Status -->
+<div class="barra">
+        <ul>
+          <li>
+            <img src="img/a_azul.png"><br>
+            <i class="fas fa-sync-alt"></i>
+            <p style="font-size: 18px;">Transmissão</p>
+          </li>
+          <li>
+            <img src="img/b.png"><br>
+            <i class="fas fa-sync-alt"></i>
+            <p style="font-size: 18px;">Visualizar</p>
+          </li>
+          <li>
+           <img src="img/c.png"><br>
+           <i class="fas fa-sync-alt"></i>
+           <p style="font-size: 18px;">Correção</p>
+          </li>
+          <li>
+            <img src="img/d.png"><br>
+            <i class="fas fa-sync-alt"></i>
+            <p style="font-size: 18px;">Envio</p>
+          </li>
+
+        </ul>
+        
+     </div><!-- FIM DA BARRA DE PROGRESSO -->
+
 <section class="bg-light">
-  <!-- <div class="container"> -->
+<div class="text-center"> 
+<iframe width="1200px" height="200px" src="https://easy-typing-forms.herokuapp.com/upload"></iframe>
+</div>
+
 	
 
-	<form id="form" onsubmit="return submitForm();">
+	<!-- <form id="form" onsubmit="return submitForm();">
 			  
 	  		<div class="text-center">
 			<button type="button" onclick="selectFiles();" style="font-size: 30px;">Selecionar Arquivos</button>
@@ -178,7 +209,7 @@
 			<br>
 			
 			<div class="d-flex flex-row bd-highlight mb-3">	
-			<div class="container"><div id="selected-images"></div></div></div>
+			<div class="container"><div id="selected-images"></div></div></div> -->
 			
       <div id="remove"> 
       <div class="album py-5 bg-light" style="text-align: center;">
@@ -191,11 +222,7 @@
                 <div class="card-body">
                   <p class="card-text"></p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <!--<div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>-->
-                    <!--<small class="text-muted">9 mins</small>-->
+                   
                   </div>
                 </div>
               </div>
@@ -206,11 +233,7 @@
                 <div class="card-body">
                   <p class="card-text"></p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <!--<div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>-->
-                    <!--<small class="text-muted">9 mins</small>-->
+                   
                   </div>
                 </div>
               </div>
@@ -221,11 +244,7 @@
                 <div class="card-body">
                   <p class="card-text"></p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <!--<div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>-->
-                    <!--<small class="text-muted">9 mins</small>-->
+                   
                   </div>
                 </div>
               </div>
@@ -316,11 +335,11 @@
     </div>
   <!-- FIM DAS FOTOS EM CAPA-->
 
-      <br>
+      <!-- <br>
       <div class="text-center">
       <input type="submit" value="ENVIAR DADOS" style="font-size:30px; text-align: center;">
       </div>
-    </form>
+    </form> -->
     
     
   <!-- </div> fotos sem capa-->
@@ -368,14 +387,19 @@
 	var selectedImages = [];
 
 	function selectFiles() {
+
+    // FUNÇÃO PARA ESCONDER AS IMAGENS
     //var myobj = document.getElementById("remove");
      //myobj.remove();
-    var x = document.getElementById("remove");
-    if (x.style.display === "none") {
-    x.style.display = "block";
-    } else {
-    x.style.display = "none";
-    }
+    //var x = document.getElementById("remove");
+    //if (x.style.display === "none") {
+    //x.style.display = "block";
+
+    
+    //} else {
+    //x.style.display = "none";
+    //}
+    // FUNÇÃO PARA ESCONDER AS IMAGENS
 
 
 		$.FileDialog({
