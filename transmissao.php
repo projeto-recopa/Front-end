@@ -119,7 +119,7 @@
         </li> -->
        
       </ul>
-      <a class="nav-link" href="visualizar.html" style="font-size: 18px; color: white;">Continuar</a>
+      <a class="nav-link" href="visualizar.php" style="font-size: 18px; color: white;">Continuar</a>
       
  
     </div>
@@ -164,7 +164,7 @@
 	
 	<!-- FIM DA HEADER-->
 
-<main role="main">
+<!-- <main role="main"> -->
 
 <!-- Barra de Status -->
 <div class="barra">
@@ -179,11 +179,11 @@
             <i class="fas fa-sync-alt"></i>
             <p style="font-size: 18px;">Visualizar</p>
           </li>
-          <li>
+          <!-- <li>
            <img src="img/c.png"><br>
            <i class="fas fa-sync-alt"></i>
            <p style="font-size: 18px;">Correção</p>
-          </li>
+          </li> -->
           <li>
             <img src="img/d.png"><br>
             <i class="fas fa-sync-alt"></i>
@@ -194,9 +194,23 @@
         
      </div><!-- FIM DA BARRA DE PROGRESSO -->
 
-<section class="bg-light">
-<div class="text-center"> 
+<div class="bg-light">
+<!-- <div class="text-center"> 
 <iframe width="1200px" height="200px" src="https://easy-typing-forms.herokuapp.com/upload"></iframe>
+</div> -->
+
+<div class="container text-center">
+  <form action="https://easy-type-forms-back.herokuapp.com/api/Upload" method="post" enctype="multipart/form-data">
+        <h1>Escolha a Imagem para Fazer Upload</h1>
+        
+        
+        
+        <input type="file" name="fileToUpload" id="fileToUpload" style="text-align: center; display: inline-block;">
+        
+        
+        <input type="submit" class="btn btn-primary" value="Upload Image" name="submit">
+        
+  </form>
 </div>
 
 	
@@ -211,8 +225,8 @@
 			<div class="d-flex flex-row bd-highlight mb-3">	
 			<div class="container"><div id="selected-images"></div></div></div> -->
 			
-      <div id="remove"> 
-      <div class="album py-5 bg-light" style="text-align: center;">
+      <!-- <div id="remove">  -->
+      <!-- <div class="album py-5 bg-light" style="text-align: center;">
         <div class="container">
 
           <div class="row">
@@ -255,13 +269,13 @@
                 <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text"></p>
-                  <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex justify-content-between align-items-center"> -->
                     <!--<div class="btn-group">
                       <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                       <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                     </div>-->
                     <!--<small class="text-muted">9 mins</small>-->
-                  </div>
+                  <!-- </div>
                 </div>
               </div>
             </div>
@@ -270,13 +284,13 @@
                 <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text"></p>
-                  <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex justify-content-between align-items-center"> -->
                     <!--<div class="btn-group">
                       <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                       <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                     </div>-->
                     <!--<small class="text-muted">9 mins</small>-->
-                  </div>
+                  <!-- </div>
                 </div>
               </div>
             </div>
@@ -285,29 +299,13 @@
                 <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text"></p>
-                  <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex justify-content-between align-items-center"> -->
                     <!--<div class="btn-group">
                       <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                       <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                     </div>-->
                     <!--<small class="text-muted">9 mins</small>-->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="card mb-3 box-shadow">
-                <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text"></p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <!--<div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>-->
-                    <!--<small class="text-muted">9 mins</small>-->
-                  </div>
+                  <!-- </div>
                 </div>
               </div>
             </div>
@@ -317,22 +315,38 @@
                 <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text"></p>
-                  <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex justify-content-between align-items-center"> -->
                     <!--<div class="btn-group">
                       <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                       <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                     </div>-->
                     <!--<small class="text-muted">9 mins</small>-->
-                  </div>
+                  <!-- </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card mb-3 box-shadow">
+                <img class="card-img-top" src="img/x.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center"> -->
+                    <!--<div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>-->
+                    <!--<small class="text-muted">9 mins</small>-->
+                  <!-- </div>
                 </div>
               </div>
             </div>
 
           </div>
-        </div>
+        </div> -->
         <!-- <a href="visualizar.html"><button type="button" class="btn btn-success">Continuar</button></a> -->
-      </div>
-    </div>
+      <!-- </div> -->
+    <!-- </div> div do id-->
   <!-- FIM DAS FOTOS EM CAPA-->
 
       <!-- <br>
@@ -344,7 +358,7 @@
     
   <!-- </div> fotos sem capa-->
   
-</section>
+</div>
 <section>
 
 </section>
@@ -376,9 +390,10 @@
         
       </div> -->
       <div class="container" style="text-align: center;">
-        <a href="https://datasus.saude.gov.br/"><img src="img/LOGO DATASUS2.png" style="width: 15%;"></a>
-        <a href="https://sites.google.com/cesar.school/recopa/home"><img src="img/recopa horizontal2.png" style="width: 15%; margin-left: 100px;"></a>
-        <a href="https://www.cesar.school/"><img src="img/logo_cesar_school.png" style="width: 15%; margin-left: 100px;"></a>
+        <a href="http://www.mpf.mp.br/"><img src="img/MPF.png" style="height: 100px;"></a>
+        <a href="https://sites.google.com/cesar.school/recopa/home"><img src="img/recopa horizontal2.png" style="width: 12%; margin-left: 100px;"></a>
+        <a href="https://www.cesar.school/"><img src="img/logo_cesar_school.png" style="width: 8%; margin-left: 100px;"></a>
+        <a href="http://www.conexao.mp.br/covid19/"><img src="img/gabinete.jpg" style="height: 40px; margin-left: 100px;"></a>
       </div>
 </footer>
 
