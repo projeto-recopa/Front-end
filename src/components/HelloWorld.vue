@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     
-    <section v-if="loginseen" style="background-color: #006633; min-height:760px;">
+    <section id="telalogin" v-if="loginseen" style="background-color: #006633; min-height:760px;">
 
     <div  class="login-form">    
         <form>
@@ -25,19 +25,24 @@
     <!-- menu -->
     <template v-if="submenu"> 
       
-      <ul class="nav justify-content-center" id="menu" style="
-    background: #006633;">
-        
-        <li class="nav-item">
-          <a @click.prevent="getAll" class="nav-link" href="#">Mostrar Todos os Documentos</a>
+      <ul class="nav justify-content-around" id="menu" style="
+    background: #006633; align-items: center;">
+        <li class="nav-item ">
+          <a class="nav-link" style="color: white;"><img class="responsive" src="../assets/easy.png" alt="" style="height: 30px;"></a>
         </li>
+        
+
+        <li class="nav-item">
+          <a @click.prevent="getAll" class="nav-link" href="#">Todos os Documentos</a>
+        </li>
+        
         <li class="nav-item">
           <a @click.prevent="logout" class="nav-link" href="#">Sair</a>
         </li>
       </ul>
     </template>
     <!-- fim menu -->
-    <div v-if="uploadseen" style="text-align:center;">
+    <div v-if="uploadseen" style="text-align:center; padding-top: 100px;">
             <!-- Barra de Status -->
           <div>
                 <img src="../assets/1.png" alt="" class="responsive"><br><br>        
@@ -67,14 +72,14 @@
     </div>
     <template v-if="tableseen">
                   <!-- Barra de Status -->
-      <div style="text-align:center;">
+      <div style="text-align:center; padding-top: 100px;">
           <img src="../assets/2.png" alt="" class="responsive"><br><br>                            
        </div><!-- FIM DA BARRA DE PROGRESSO -->
 
     </template>
     <template v-if="formseen">
                   <!-- Barra de Status -->
-      <div style="text-align:center;">
+      <div style="text-align:center; padding-top: 100px;">
           <img src="../assets/2.png" alt="" class="responsive"><br><br>                            
        </div><!-- FIM DA BARRA DE PROGRESSO -->
 
@@ -144,7 +149,7 @@
             <!-- FIM TABLE MOSTRA ALL -->
     </template>
     <template>
-        <div v-if="msgseen" style="text-align:center;">
+        <div v-if="msgseen" style="text-align:center; padding-top: 100px;">
       <!-- Barra de Status -->
           <div>
                 <img src="../assets/3.png" alt="" class="responsive"><br><br> 
@@ -161,16 +166,31 @@
       </div>
       </div>
     </template>
+    <!-- <div v-if="!url && !loginseen && !tableseen2 && !msgseen && !sendseen && !formseen" style="text-align: center;"> <img src="../assets/tablet02.png" alt="" style="height: 400px;"></div> -->
      <div class="container-fluid">
+       
         <div class="row">
             <div class="col-sm"> <!-- Primeira Coluna -->
-              <div v-if="!url && !loginseen && !tableseen2 && !msgseen && !sendseen"> <img src="../assets/x.jpg" alt="" style="height: 400px;"></div>
+            <div v-if="!url && !loginseen && !tableseen2 && !msgseen && !sendseen && !formseen" style="text-align: center;"> <img src="../assets/tablet04.png" alt="" class="responsive" style="height: 220px;"></div>
+              <div v-if="!url && formseen"> <img src="../assets/x.jpg" alt="" style="height: 400px;" class="responsive"></div>
               <div  id="preview">
-                <img v-if="url && !msgseen && !sendseen" :src="url" alt="no image">
+                <img v-if="url && !msgseen && !sendseen" :src="url" alt="no image"  style="border: solid">
               </div>
             </div>
-            <div class="col-sm"> <!-- Segunda Coluna -->
-               <!--FORM-->
+            <div v-if="!loader.uploadFinish && !tableseen2 && !msgseen && !sendseen && !formseen && !loginseen" class="col-sm" style="text-align: center;"> <!-- Segunda Col -->
+              <div v-if="!loader.uploadImg && !loginseen && !loader.uploadFinish">
+                  <img src="../assets/back04.png" alt="" style="height: 250px;" class="responsive">
+                  
+              </div>
+              <div v-if="loader.uploadImg">
+                    <img src="../assets/loadingeasy.gif" alt="" style="height: 250px; color: green;" class="responsive">   
+              </div>
+            </div>
+            <div class="col-sm"> <!-- Terceira Col -->
+              <!--FORM-->
+              <div v-if="!loader.uploadFinish && uploadseen" style="text-align: center;">
+                <img src="../assets/pcform.jpg" alt="" class="responsive" style="height: 250px;">
+              </div>
               <div v-if="formseen" class="container-sm" id="form1">
                   
                 <h3 style="border-bottom: outset;">Ficha Cadastral</h3><br>
@@ -190,13 +210,13 @@
                             <div class="form-group">
                                 <label>Tem CPF?</label>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="true" v-model="info.possuiCPF">
                                   <label class="form-check-label" for="flexRadioDefault1">
                                     Sim
                                   </label>
                                 </div>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="false" v-model="info.possuiCPF">
                                   <label class="form-check-label" for="flexRadioDefault2">
                                     Não
                                   </label>
@@ -207,13 +227,13 @@
                             <div class="form-group">
                                 <label>Estrangeiro?</label>
                                <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="flexRadio2" id="flexRadioDefault3">
+                                  <input class="form-check-input" type="radio" name="flexRadio2" id="flexRadioDefault3" value="true" v-model="info.estrangeiro">
                                   <label class="form-check-label" for="flexRadioDefault3">
                                     Sim
                                   </label>
                                 </div>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="flexRadio2" id="flexRadioDefault4" >
+                                  <input class="form-check-input" type="radio" name="flexRadio2" id="flexRadioDefault4" value="false" v-model="info.estrangeiro" >
                                   <label class="form-check-label" for="flexRadioDefault4">
                                     Não
                                   </label>
@@ -224,13 +244,13 @@
                             <div class="form-group">
                                 <label>Profissional da Saude?</label>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="flexRadio3" id="flexRadioDefault5">
+                                  <input class="form-check-input" type="radio" name="flexRadio3" id="flexRadioDefault5" value="true" v-model="info.profisionalSaude">
                                   <label class="form-check-label" for="flexRadioDefault5">
                                    Sim
                                   </label>
                                 </div>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="flexRadio3" id="flexRadioDefault6" >
+                                  <input class="form-check-input" type="radio" name="flexRadio3" id="flexRadioDefault6" value="false" v-model="info.profisionalSaude" >
                                   <label class="form-check-label" for="flexRadioDefault6">
                                     Não
                                   </label>
@@ -408,31 +428,31 @@
                             <div class="form-group">
                                 <label>Sintomas</label>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" v-model="info.sintomas.febre">
                                   <label class="form-check-label" for="flexCheckDefault">
                                     Febre
                                   </label>
                                 </div>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.sintomas.tosse">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Tosse
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.sintomas.dorGarganta">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Dor de Garganta
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.sintomas.dispneia">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Dispneia
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.sintomas.outros">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Outros
                                   </label>
@@ -456,43 +476,43 @@
                             <div class="form-group">
                                 <label>Condições</label>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" v-model="info.condicoes.doencasRespiratorias">
                                   <label class="form-check-label" for="flexCheckDefault">
                                     Doenças respiratórias crônicas descompensadas
                                   </label>
                                 </div>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.condicoes.doencasRenais">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Doenças renais crônicas em estágio avançado (graus 3, 4 e 5)
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.condicoes.doencasCromossomicas">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Portador de doenças cromossômicas ou estado de fragilidade imunológica
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.condicoes.diabetes">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Diabetes
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.condicoes.imunossupressao">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Imunossupressão
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.condicoes.doencasCardiacas">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Doenças Cardiacas Crônicas
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.condicoes.gestantes">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Gestante
                                   </label>
@@ -504,25 +524,25 @@
                             <div class="form-group">
                                 <label>Estado do Teste</label>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" v-model="info.estadoTeste.solicitado">
                                   <label class="form-check-label" for="flexCheckDefault">
                                     Solicitado
                                   </label>
                                 </div>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.estadoTeste.coletado">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Coletado
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.estadoTeste.concluido">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Concluido
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.estadoTeste.naoSolicitado">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Exame Não Solicitado
                                   </label>
@@ -541,31 +561,31 @@
                             <div class="form-group">
                                 <label>Tipo do Teste</label>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" v-model="info.tipoTeste.rtpcr">
                                   <label class="form-check-label" for="flexCheckDefault">
                                     RT - PCR
                                   </label>
                                 </div>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.tipoTeste.testeRapidoAnticorpo">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Teste rápido - anticorpo
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.tipoTeste.testeRapidoAntigeno">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Teste rápido - antigeno
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.tipoTeste.elisa">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Enzimaimunoensaio - ELISA
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.tipoTeste.eclia">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Imunoensaio por Eletroquimioluminescência - ECLIA
                                   </label>
@@ -584,37 +604,37 @@
                             <div class="form-group">
                                 <label>Classificação Final</label>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" v-model="info.classificacaoFinal.descartado">
                                   <label class="form-check-label" for="flexCheckDefault">
                                     Descartado
                                   </label>
                                 </div>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.classificacaoFinal.cofirmadoClinicoEpidemiologico">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Confirmado Clinico-Epidemiologico
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.classificacaoFinal.cofirmadoLaboratorial">
                                   <label class="form-check-label" for="flexCheckChecked">
-                                   Confirmado Laboritorial
+                                   Confirmado Laboratorial
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.classificacaoFinal.sindromeGripal">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Sindrome Gripal Não Especificada
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.classificacaoFinal.cofirmadoClinicoImagem">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Confirmado Clinico Imagem
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.classificacaoFinal.cofirmadoCriterioClinico">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Confirmado por Critério Clínico
                                   </label>
@@ -626,43 +646,43 @@
                             <div class="form-group">
                                 <label>Evolução do Caso</label>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" v-model="info.evolucaoCaso.cancelado">
                                   <label class="form-check-label" for="flexCheckDefault">
                                     Cancelado
                                   </label>
                                 </div>
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.evolucaoCaso.ignorado">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Ignorado
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.evolucaoCaso.tratamentoDomiciliar">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Em trantamento domiciliar
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.evolucaoCaso.internadoUTI">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Internado em UTI
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.evolucaoCaso.internado">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Internado
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.evolucaoCaso.obito">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Óbito
                                   </label>
                                 </div>                          
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" v-model="info.evolucaoCaso.cura">
                                   <label class="form-check-label" for="flexCheckChecked">
                                    Cura
                                   </label>
@@ -751,7 +771,7 @@
          <!--FORM-->
     
     
-    <br>
+    
     
     
     <div v-if="sendseen" style="text-align:center;">
@@ -833,11 +853,53 @@ export default {
           dorGarganta: 'false',
           dispneia: 'false',
           outros: 'false',
+        },
+        condicoes: {
+          doencasRespiratorias: 'false',
+          doencasRenais: 'false',
+          doencasCromossomicas: 'false',
+          doencasCardiacas: 'false',
+          diabetes: 'false',
+          gestantes: 'false',
+          imunossupressao: 'false',
         }, 
-        
-
-        
-
+        evolucaoCaso: {
+          cancelado: 'false',
+          ignorado: 'false',
+          tratamentoDomiciliar: 'false',
+          internadoUTI: 'false',
+          internado: 'false',
+          obito: 'false',
+          cura: 'false',
+        }, 
+        classificacaoFinal: {
+          descartado: 'false',
+          cofirmadoClinicoImagem: 'false',
+          cofirmadoClinicoEpidemiologico: 'false',
+          cofirmadoCriterioClinico: 'false',
+          cofirmadoLaboratorial: 'false',
+          sindromeGripal: 'false',
+          
+        }, 
+        estadoTeste: {
+          solicitado: '',
+          coletado: '',
+          concluido: '',
+          naoSolicitado: '',
+                    
+        }, 
+        tipoTeste: {
+          rtpcr: 'false',
+          testeRapidoAnticorpo: 'false',
+          testeRapidoAntigeno: 'false',
+          elisa: 'false',
+          eclia: 'false',
+                    
+        }, 
+        possuiCPF : '',
+        estrangeiro : '',
+        profisionalSaude : '',
+       
       },
       url: null,
       file: null,
@@ -942,6 +1004,7 @@ export default {
           this.tableseen2 = true;
           this.sendseen = false;
           this.loader.uploadFinish = false;
+          this.url = '';
           
         })
     },
@@ -975,6 +1038,59 @@ export default {
         bairro: this.info.bairro,
         sexo: this.info.sexo,
         uf: this.info.uf,
+        possuiCPF : this.info.possuiCPF,
+        estrangeiro : this.info.estrangeiro,
+        profisionalSaude : this.info.profisionalSaude,
+
+        sintomas: {
+          febre : this.info.sintomas.febre,
+          tosse: this.info.sintomas.tosse,
+          dorGarganta: this.info.sintomas.dorGarganta,
+          dispneia: this.info.sintomas.dispneia,
+          outros: this.info.sintomas.outros,
+        },
+        condicoes: {
+          doencasRespiratorias: this.info.condicoes.doencasRespiratorias,
+          doencasRenais: this.info.condicoes.doencasRenais,
+          doencasCromossomicas: this.info.condicoes.doencasCromossomicas,
+          doencasCardiacas: this.info.condicoes.doencasCardiacas,
+          diabetes: this.info.condicoes.diabetes,
+          gestantes: this.info.condicoes.gestantes,
+          imunossupressao: this.info.condicoes.imunossupressao,
+        }, 
+        evolucaoCaso: {
+          cancelado: this.info.evolucaoCaso.cancelado,
+          ignorado: this.info.evolucaoCaso.ignorado,
+          tratamentoDomiciliar: this.info.evolucaoCaso.tratamentoDomiciliar,
+          internadoUTI: this.info.evolucaoCaso.internadoUTI,
+          internado: this.info.evolucaoCaso.internado,
+          obito: this.info.evolucaoCaso.obito,
+          cura: this.info.evolucaoCaso.cura,
+        }, 
+        classificacaoFinal: {
+          descartado: this.info.classificacaoFinal.descartado,
+          cofirmadoClinicoImagem: this.info.classificacaoFinal.cofirmadoClinicoImagem,
+          cofirmadoClinicoEpidemiologico: this.info.classificacaoFinal.cofirmadoClinicoEpidemiologico,
+          cofirmadoCriterioClinico: this.info.classificacaoFinal.cofirmadoCriterioClinico,
+          cofirmadoLaboratorial: this.info.classificacaoFinal.cofirmadoLaboratorial,
+          sindromeGripal: this.info.classificacaoFinal.sindromeGripal,
+          
+        }, 
+        estadoTeste: {
+          solicitado: this.info.estadoTeste.solicitado,
+          coletado: this.info.estadoTeste.coletado,
+          concluido: this.info.estadoTeste.concluido,
+          naoSolicitado: this.info.estadoTeste.naoSolicitado,
+                    
+        }, 
+        tipoTeste: {
+          rtpcr: this.info.tipoTeste.rtpcr,
+          testeRapidoAnticorpo: this.info.tipoTeste.testeRapidoAnticorpo,
+          testeRapidoAntigeno: this.info.tipoTeste.testeRapidoAntigeno,
+          elisa: this.info.tipoTeste.elisa,
+          eclia: this.info.tipoTeste.eclia,
+                    
+        },
 
       })
       
@@ -1005,7 +1121,7 @@ export default {
     },
     downloadDoc(info){
       this.info = info
-      const url = `https://easy-type-back.azurewebsites.net/api/Upload/download/${this.info.id}?edit=1`
+      const url = `https://easy-type-back.azurewebsites.net/api/Upload/download/${this.info.id}?edit=-1`
       axios.get (url, {
         responseType: 'blob'
       }).then(res => {
@@ -1038,12 +1154,16 @@ export default {
       this.uploadseen = true
       this.uploadPercentage = 0;
       this.file = null;
+      this.url = '';
+      this.uploadFinish = false
+
     },
     UserLogin(){
       this.loginseen = false
       this.uploadseen = true
       this.tableseen2 = false
       this.submenu = true
+      this.url = ''
     },
     logout(){
       this.uploadseen = false
@@ -1056,6 +1176,7 @@ export default {
       this.uploadPercentage = 0;
       this.submenu = false;
       this.url = null;
+      this.loader.uploadFinish = false;
 
     },
     
@@ -1244,7 +1365,17 @@ footer{
   height: auto;
 }
 
-
+#telalogin {
+  background-image: url("../assets/back01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+/* .hello{
+  background-image: url("../assets/back03.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
 
 
 </style>
