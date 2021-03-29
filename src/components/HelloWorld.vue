@@ -814,8 +814,10 @@
 
 <script>
 import axios from 'axios'
+import { API_URL } from "@/common/config";
+const baseUrl = API_URL;
 export default {
-  name: 'HelloWorld',
+  name: 'Easy-Typing-Forms',
   props: {
     msg: String
   },
@@ -937,8 +939,9 @@ export default {
       this.loader.uploadImg = true
       const fd = new FormData();
       fd.append('image', this.file, this.file.name)
+      this.
       //axios.post('https://easy-type-forms-back.herokuapp.com/api/Upload', fd, {
-      axios.post('https://easy-type-back.azurewebsites.net/api/Upload', fd, {
+      axios.post(`${baseUrl}/Upload`, fd, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
@@ -969,7 +972,7 @@ export default {
       //   //  }
       // })
       //const url = `https://jsonplaceholder.typicode.com/users/${this.docid}`
-      const url = `https://easy-type-back.azurewebsites.net/api/document/${this.docid.id}`
+      const url = `${baseUrl}/document/${this.docid.id}`
       //const url = `https://easy-type-forms-back.herokuapp.com/api/document/${this.docid.id}`
       axios.get(url, {
        
@@ -991,7 +994,7 @@ export default {
       //   //  }
       // })
       //const url = `https://jsonplaceholder.typicode.com/users/`
-      const url = `https://easy-type-back.azurewebsites.net/api/document/`
+      const url = `${base}/api/document/`
       //const url = `https://easy-type-forms-back.herokuapp.com/api/document/`
       axios.get(url, {
        
@@ -1017,7 +1020,7 @@ export default {
 
       // })
       //fim  teste
-      const url = `https://easy-type-back.azurewebsites.net/api/document/${this.info.id}`
+      const url = ${base}/api/document/${this.info.id}`
       //const url = `https://easy-type-forms-back.herokuapp.com/api/document/${this.info.id}`
       axios.put(url,{
         id: this.info.id,
@@ -1110,7 +1113,7 @@ export default {
     deleteInfo(info) {
       this.info = info
       //const url = `https://jsonplaceholder.typicode.com/users/${this.info.id}`
-      const url = `https://easy-type-back.azurewebsites.net/api/document/${this.info.id}`
+      const url = `${base}/api/document/${this.info.id}`
       //const url = `https://easy-type-forms-back.herokuapp.com/api/document/${this.info.id}`
       axios.delete(url, {
         id : this.info.id
@@ -1121,7 +1124,7 @@ export default {
     },
     downloadDoc(info){
       this.info = info
-      const url = `https://easy-type-back.azurewebsites.net/api/Upload/download/${this.info.id}?edit=-1`
+      const url = `${base}/api/Upload/download/${this.info.id}?edit=-1`
       axios.get (url, {
         responseType: 'blob'
       }).then(res => {
